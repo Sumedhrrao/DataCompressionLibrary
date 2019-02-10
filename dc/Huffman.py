@@ -1,0 +1,2 @@
+class Huffman:
+    pass
