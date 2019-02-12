@@ -10,7 +10,8 @@ class RunLength(Common):
     # The algorithm
     def _count_(self):
         self.encoded_string = ''
-        for i in range(0,len(self.source)):
+        i=0
+        while(i < len(self.source)):
             setVariable = self.source[i]
             count = 0
             while(self.source[i] == setVariable):
@@ -19,6 +20,8 @@ class RunLength(Common):
                 if i >= len(self.source):
                     break
             self.encoded_string = self.encoded_string + str(count) + self.source[i-1]
+            
+            
 
     #the main function
     def compress(self, source):
@@ -27,11 +30,11 @@ class RunLength(Common):
         self.source = Common._setSource_(self,source)
         if self.source is None:
             Common._printError_(self)
-            return
-        print("souce set as: "+self.source)
-        
+            return        
         #get the distinct elements and their respective counts
         self._count_()
+
+        return self.encoded_string
 
     
 
