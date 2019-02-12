@@ -52,7 +52,6 @@ class Huffman(Common):
             for key in self.dict_of_probabilities.keys():
                 a = _findSymbol_(self.list_of_nodes[0],key,'')
                 self.dict_of_codes[key] = a
-            print(self.dict_of_codes)
     
     def encode(self):
         self.encoded = ''
